@@ -3,10 +3,10 @@
     public class Employee
     {
         public Guid Id { get; set; } = Guid.NewGuid();
-        public string FullName { get; set; }
-        public string NationalId { get; set; }
+        public string FullName { get; set; } = string.Empty;
+        public string NationalId { get; set; } = string.Empty;
         public DateTime HireDate { get; set; }
         public decimal Salary { get; set; }
-        public string JobTitle { get; set; }
+        public string JobTitle { get; set; } = string.Empty;
     }
 }
