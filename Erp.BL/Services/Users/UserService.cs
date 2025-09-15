@@ -1,10 +1,11 @@
 ﻿using Erp.BL.DTOs.UserDto;
+using Erp.DAL.Data.Models;
+using Erp.DAL.Data.Repositories.Users;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Erp.DAL.Data.Repositories.Users;
 
 namespace Erp.BL.Services.Users
 {
@@ -17,9 +18,15 @@ namespace Erp.BL.Services.Users
             _repo = repo;
         }
 
-        public void CreateUser(UserDto user)
+        public void CreateUser(UserDto userDto)
         {
-            throw new NotImplementedException();
+            var user = new User
+            {
+                Name = userDto.Name,
+                Email = userDto.Email,
+            };
+
+            _repo.Insert(user);
         }
 
         public void DeleteUser(Guid id)
