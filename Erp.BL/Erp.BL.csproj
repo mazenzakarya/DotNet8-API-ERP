@@ -7,12 +7,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="DTOs\ProductDto\" />
-    <Folder Include="DTOs\OrderDto\" />
-    <Folder Include="Services\Orders\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <ProjectReference Include="..\Erp.DAL\Erp.DAL.csproj" />
   </ItemGroup>
 

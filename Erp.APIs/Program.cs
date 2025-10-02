@@ -1,5 +1,9 @@
+using Erp.BL.Services.Orders;
+using Erp.BL.Services.Product;
 using Erp.BL.Services.Users;
 using Erp.DAL.Data.ContractorsContext;
+using Erp.DAL.Data.Repositories.NewFolder;
+using Erp.DAL.Data.Repositories.Orders;
 using Erp.DAL.Data.Repositories.Users;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
@@ -26,6 +30,10 @@ namespace Erp.APIs
 
             builder.Services.AddScoped<IUsersRepository, UsersRepository>();
             builder.Services.AddScoped<IUserService, UserService>();
+            builder.Services.AddScoped<IOrderService, OrderService>();
+            builder.Services.AddScoped<IOrdersRepository, OrderRepository>();
+            builder.Services.AddScoped<IProductRepository, ProductRepository>();
+            builder.Services.AddScoped<IProductServies, ProductServies>();
 
             var app = builder.Build();
 
