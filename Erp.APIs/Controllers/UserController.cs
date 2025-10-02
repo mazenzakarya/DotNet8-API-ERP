@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Erp.BL.Services.Users;
+using Erp.BL.DTOs.UserDto;
 
 namespace Erp.APIs.Controllers
 {
@@ -19,6 +20,13 @@ namespace Erp.APIs.Controllers
         {
             var users = _userService.GetAllUsers();
             return Ok(users);
+        }
+
+        [HttpPost]
+        public IActionResult Create([FromBody] UserDto user)
+        {
+            _userService.CreateUser(user);
+            return Ok();
         }
     }
 }
